@@ -25,6 +25,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Ink;
+using System;
 
 namespace Capital
 {
@@ -209,23 +210,40 @@ namespace Capital
             double x = 0;
             double y = 0;
 
+            double last_x1 = 0;
+            double last_y1 = 0;
+
             for (int i = 0; i < count; i++)
             {
                 y = _canvas.ActualHeight - (double)(listEquity[i] - minEquity) / koef;  // вычитание делается для зеркаливания т.к. y считается сверху вниз, а нам надо наоборот
-
+                
+                /*
                 Ellipse ellipse = new Ellipse();
-                {
-                    Width = 2;
-                    Height = 2;
-                    ellipse.Stroke = Brushes.Black;  // может быть ошибка_
-                };
+                ellipse.Width = 10;
+                ellipse.Height = 10;
+                ellipse.Stroke = Brushes.DarkBlue; 
 
                 Canvas.SetLeft(ellipse, x);
-                Canvas.SetTop(ellipse, y);
+                Canvas.SetTop(ellipse, y);  // расчет сверху вниз
 
                 _canvas.Children.Add(ellipse);
+                */
 
-                x += stepX; 
+                Line line = new Line();
+
+                line.X1 = last_x1;
+                line.Y1 = last_y1;
+                line.X2 = x;
+                line.Y2 = y;
+
+                line.Stroke = Brushes.Black;
+
+                _canvas.Children.Add(line);
+
+                last_x1 = x;
+                last_y1 = y;
+
+                x += stepX;
             }
         }
 
