@@ -48,7 +48,7 @@ namespace Capital.Entity
 
                 Profit = ResultDepo - Depo;  // Расчитываем Profit
 
-                PercentProfit = Profit * 100 / Depo;  // Расчитываем Profit в %
+                PercentProfit = Math.Round(Profit * 100 / Depo);  // Расчитываем Profit в %
 
                 ListEquity.Add(ResultDepo);  // сохраняем каждое значение эквити (депо) в список для расчета относительной просадки
 
