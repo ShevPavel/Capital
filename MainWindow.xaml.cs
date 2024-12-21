@@ -217,7 +217,7 @@ namespace Capital
                 {
                     Width = 2;
                     Height = 2;
-                    ellipse.Stroke = Brushes.Black;  // может быть ошибка
+                    ellipse.Stroke = Brushes.Black;  // может быть ошибка_
                 };
 
                 Canvas.SetLeft(ellipse, x);
