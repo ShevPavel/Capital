@@ -56,16 +56,13 @@ namespace Capital
 
         List<Data> datas;
 
-        bool combobox_Drow_on = false;  // переменная для включения / выключения метода Drow после метода 
-
-        //=====================
+        bool combobox_Drow_on = false;  // переменная для включения / выключения работы метода Drow после запуска приложения
 
         private void eventhandler(object sender, EventArgs e)
         {
-            Drow(datas);
+            if (combobox_Drow_on) Drow(datas);   // при первом запуске окна метод не будет срабатывать
         }
 
-        //==========================
         #endregion
 
 
