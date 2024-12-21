@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Capital"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200">
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -86,7 +87,8 @@
                   Grid.ColumnSpan="3" Grid.Row="13"
                   Margin="5">
             <Canvas x:Name="_canvas"
-                Margin="5" Background="LightGray">
+                    SizeChanged="eventhandler"
+                    Margin="5" Background="LightGray">
             </Canvas>
         </GroupBox>
 

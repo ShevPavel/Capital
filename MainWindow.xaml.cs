@@ -58,6 +58,14 @@ namespace Capital
 
         bool combobox_Drow_on = false;  // переменная для включения / выключения метода Drow после метода 
 
+        //=====================
+
+        private void eventhandler(object sender, EventArgs e)
+        {
+            Drow(datas);
+        }
+
+        //==========================
         #endregion
 
 
